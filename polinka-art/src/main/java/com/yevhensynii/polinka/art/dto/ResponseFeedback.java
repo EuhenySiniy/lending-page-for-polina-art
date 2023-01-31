@@ -14,7 +14,7 @@ public class ResponseFeedback implements Serializable {
   private Long id;
   private String feedbackMessage;
   private int countStar;
-  private ZonedDateTime dateTimeCreate;
   private String clientName;
   private String photoLink;
+  private ResponseOrder order;
 }
