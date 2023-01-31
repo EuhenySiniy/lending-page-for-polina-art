@@ -14,7 +14,5 @@ public class ResponseOrder {
   private String clientName;
   private int clientNumber;
   private String photoLink;
-  private ZonedDateTime dateTimeCreate;
-  private ZonedDateTime dateTimeModify;
   private String status;
 }
