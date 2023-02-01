@@ -4,8 +4,6 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-import java.time.ZonedDateTime;
-
 @Getter
 @Setter
 @RequiredArgsConstructor
@@ -13,6 +11,7 @@ public class ResponseOrder {
   private Long id;
   private String clientName;
   private int clientNumber;
+  private String clientMessenger;
   private String photoLink;
   private String status;
 }
