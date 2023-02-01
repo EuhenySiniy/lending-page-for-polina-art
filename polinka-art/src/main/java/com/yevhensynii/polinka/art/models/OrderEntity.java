@@ -21,6 +21,7 @@ import lombok.Setter;
 @Table(name = "pa_orders")
 public class OrderEntity {
   public enum Status {
+    CONSULT,
     NEW,
     IN_PROCESS,
     CANCELED,
@@ -38,6 +39,9 @@ public class OrderEntity {
 
   @Column(name = "client_contact_number")
   private int clientNumber;
+
+  @Column(name = "client_messenger")
+  private String clientMessenger;
 
   @Column(name = "photo_link")
   private String photoLink;

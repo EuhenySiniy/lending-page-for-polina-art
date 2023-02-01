@@ -21,9 +21,16 @@ public class OrderServiceImpl implements OrderService {
   @Transactional
   public ResponseOrder createOrder(OrderRequestDto orderDto) {
     OrderEntity order = orderMapper.toEntity(orderDto);
-    order.setStatus(OrderEntity.Status.NEW.toString());
-
+    if(isPhotoPresent(order)) {
+      order.setStatus(OrderEntity.Status.NEW.toString());
+    } else {
+      order.setStatus(OrderEntity.Status.CONSULT.toString());
+    }
     orderRepository.save(order);
     return orderMapper.toDto(order);
+  }
+
+  private boolean isPhotoPresent(OrderEntity entity) {
+    return entity.getPhotoLink() != null;
   }
 }

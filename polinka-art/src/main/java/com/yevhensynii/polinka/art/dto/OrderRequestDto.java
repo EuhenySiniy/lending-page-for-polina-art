@@ -21,5 +21,8 @@ public class OrderRequestDto implements Serializable {
   @Pattern(regexp = "^[0-9]*$", message = "The phone number must contain only digits")
   private int clientNumber;
 
+  @Pattern(regexp = "^[A-Z][a-z]*(?:[- ][a-zA-Z][a-z]*)*$", message = "Incorrect messenger")
+  private String clientMessenger;
+
   private String photoLink;
 }
