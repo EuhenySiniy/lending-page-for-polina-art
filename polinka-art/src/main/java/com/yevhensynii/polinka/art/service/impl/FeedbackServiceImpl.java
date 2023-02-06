@@ -8,7 +8,6 @@ import com.yevhensynii.polinka.art.models.OrderEntity;
 import com.yevhensynii.polinka.art.repo.FeedbackRepository;
 import com.yevhensynii.polinka.art.repo.OrderRepository;
 import com.yevhensynii.polinka.art.service.FeedbackService;
-import com.yevhensynii.polinka.art.service.OrderService;
 import com.yevhensynii.polinka.art.service.exceptions.FeedbackCreationError;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
