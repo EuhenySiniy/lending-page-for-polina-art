@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS public.pa_orders
 (
     order_id bigint NOT NULL DEFAULT nextval('order_id_sequence'::regclass),
     client_name character varying(32) COLLATE pg_catalog."default" NOT NULL,
-    client_contact_number bigint NOT NULL,
+    client_contact_number varchar(16) NOT NULL,
     client_messenger varchar(32) NOT NULL,
     photo_link character varying(256) COLLATE pg_catalog."default",
     datetime_create timestamp without time zone DEFAULT now(),
