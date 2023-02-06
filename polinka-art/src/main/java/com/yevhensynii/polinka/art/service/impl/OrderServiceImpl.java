@@ -6,6 +6,7 @@ import com.yevhensynii.polinka.art.mappers.OrderMapper;
 import com.yevhensynii.polinka.art.models.OrderEntity;
 import com.yevhensynii.polinka.art.repo.OrderRepository;
 import com.yevhensynii.polinka.art.service.OrderService;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,6 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
-
   private final OrderRepository orderRepository;
   private final OrderMapper orderMapper;
 
@@ -21,13 +21,22 @@ public class OrderServiceImpl implements OrderService {
   @Transactional
   public ResponseOrder createOrder(OrderRequestDto orderDto) {
     OrderEntity order = orderMapper.toEntity(orderDto);
-    if(isPhotoPresent(order)) {
+    if (isPhotoPresent(order)) {
       order.setStatus(OrderEntity.Status.NEW.toString());
     } else {
+      order.setPhotoLink("Missing link");
       order.setStatus(OrderEntity.Status.CONSULT.toString());
     }
     orderRepository.save(order);
     return orderMapper.toDto(order);
+  }
+
+  public boolean orderComplete(Long id) {
+    OrderEntity entity = orderRepository.findById(id)
+        .orElseThrow(
+            () -> new EntityNotFoundException("Order with id: " + id + " wasn't found")
+        );
+    return OrderEntity.Status.valueOf(entity.getStatus()) == OrderEntity.Status.FINISHED;
   }
 
   private boolean isPhotoPresent(OrderEntity entity) {
