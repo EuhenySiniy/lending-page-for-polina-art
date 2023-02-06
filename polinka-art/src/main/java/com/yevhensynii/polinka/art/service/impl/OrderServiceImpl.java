@@ -6,7 +6,6 @@ import com.yevhensynii.polinka.art.mappers.OrderMapper;
 import com.yevhensynii.polinka.art.models.OrderEntity;
 import com.yevhensynii.polinka.art.repo.OrderRepository;
 import com.yevhensynii.polinka.art.service.OrderService;
-import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,6 @@
 package com.yevhensynii.polinka.art.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.yevhensynii.polinka.art.models.OrderEntity;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;

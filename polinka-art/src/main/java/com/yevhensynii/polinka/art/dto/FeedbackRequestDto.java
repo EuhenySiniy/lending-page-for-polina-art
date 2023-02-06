@@ -1,6 +1,5 @@
 package com.yevhensynii.polinka.art.dto;
 
-import com.yevhensynii.polinka.art.models.OrderEntity;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
