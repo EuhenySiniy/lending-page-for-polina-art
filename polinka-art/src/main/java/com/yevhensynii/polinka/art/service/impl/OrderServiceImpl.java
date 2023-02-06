@@ -31,14 +31,6 @@ public class OrderServiceImpl implements OrderService {
     return orderMapper.toDto(order);
   }
 
-  public boolean orderComplete(Long id) {
-    OrderEntity entity = orderRepository.findById(id)
-        .orElseThrow(
-            () -> new EntityNotFoundException("Order with id: " + id + " wasn't found")
-        );
-    return OrderEntity.Status.valueOf(entity.getStatus()) == OrderEntity.Status.FINISHED;
-  }
-
   private boolean isPhotoPresent(OrderEntity entity) {
     return entity.getPhotoLink() != null;
   }

@@ -10,7 +10,7 @@ import lombok.Setter;
 public class ResponseOrder {
   private Long id;
   private String clientName;
-  private int clientNumber;
+  private String clientNumber;
   private String clientMessenger;
   private String photoLink;
   private String status;

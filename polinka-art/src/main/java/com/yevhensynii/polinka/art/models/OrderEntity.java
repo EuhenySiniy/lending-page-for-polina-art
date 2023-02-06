@@ -38,7 +38,7 @@ public class OrderEntity {
   private String clientName;
 
   @Column(name = "client_contact_number")
-  private int clientNumber;
+  private String clientNumber;
 
   @Column(name = "client_messenger")
   private String clientMessenger;
