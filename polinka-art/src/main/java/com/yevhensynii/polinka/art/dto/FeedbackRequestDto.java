@@ -1,11 +1,14 @@
 package com.yevhensynii.polinka.art.dto;
 
+import com.yevhensynii.polinka.art.models.OrderEntity;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 @Getter
@@ -19,5 +22,7 @@ public class FeedbackRequestDto implements Serializable {
   @Size(min = 1, max = 5)
   private int countStar;
 
+  @Positive
+  @NotNull
   private Long orderId;
 }

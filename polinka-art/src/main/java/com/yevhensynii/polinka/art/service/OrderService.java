@@ -5,4 +5,6 @@ import com.yevhensynii.polinka.art.dto.ResponseOrder;
 
 public interface OrderService {
   ResponseOrder createOrder(OrderRequestDto order);
+
+  boolean orderComplete(Long id);
 }
